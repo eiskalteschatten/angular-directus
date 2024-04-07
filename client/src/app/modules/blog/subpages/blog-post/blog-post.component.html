@@ -19,22 +19,22 @@
           @case ('header') {
             @switch (block.data.level) {
               @case (1) {
-                <h1 class="text-4xl font-bold">{{ block.data.text }}</h1>
+                <h1 class="text-4xl font-bold mt-7 mb-3">{{ block.data.text }}</h1>
               }
               @case (2) {
-                <h2 class="text-3xl font-bold">{{ block.data.text }}</h2>
+                <h2 class="text-3xl font-bold mt-7 mb-3">{{ block.data.text }}</h2>
               }
               @case (3) {
-                <h3 class="text-2xl font-bold">{{ block.data.text }}</h3>
+                <h3 class="text-2xl font-bold mt-7 mb-3">{{ block.data.text }}</h3>
               }
               @case (4) {
-                <h4 class="text-xl font-bold">{{ block.data.text }}</h4>
+                <h4 class="text-xl font-bold mt-7 mb-3">{{ block.data.text }}</h4>
               }
               @case (5) {
-                <h5 class="text-lg font-bold">{{ block.data.text }}</h5>
+                <h5 class="text-lg font-bold mt-7 mb-3">{{ block.data.text }}</h5>
               }
               @case (6) {
-                <h6 class="text-base font-bold">{{ block.data.text }}</h6>
+                <h6 class="text-base font-bold mt-7 mb-3">{{ block.data.text }}</h6>
               }
             }
           }
@@ -56,14 +56,14 @@
             <!-- TODO: recursive lists -->
             @switch (block.data.style) {
               @case ('ordered') {
-                <ol>
+                <ol class="list-decimal">
                   @for (item of block.data.items; track $index) {
                     <li [innerHTML]="item.content"></li>
                   }
                 </ol>
               }
               @default {
-                <ul>
+                <ul class="list-inside list-disc">
                   @for (item of block.data.items; track $index) {
                     <li [innerHTML]="item.content"></li>
                   }
@@ -73,7 +73,7 @@
           }
           @case ('checklist') {
             <!-- TODO: show checkboxes -->
-            <ul>
+            <ul class="list-inside list-disc">
               @for (item of block.data.items; track $index) {
                 <li [innerHTML]="item.text"></li>
               }
