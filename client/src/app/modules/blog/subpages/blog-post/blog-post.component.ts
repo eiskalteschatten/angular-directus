@@ -27,6 +27,10 @@ export class BlogPostComponent implements OnInit {
   }
 
   get featuredImageUrl(): string | undefined {
-    return this.post?.featuredImage ? `${environment.directus.url}/assets/${this.post.featuredImage}` : undefined;
+    return this.post?.featuredImage ? this.getDirectusImageUrl(`/assets/${this.post.featuredImage}`) : undefined;
+  }
+
+  getDirectusImageUrl(image: string): string {
+    return `${environment.directus.url}${image}`;
   }
 }

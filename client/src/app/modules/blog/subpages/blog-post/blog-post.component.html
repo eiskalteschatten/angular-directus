@@ -46,11 +46,13 @@
             <div [innerHTML]="block.data.caption"></div>
           }
           @case ('image') {
-            <img
-              [src]="block.data.file?.url"
-              [alt]="block.data.file?.title"
-            />
-            <div [innerHTML]="block.data.caption"></div>
+            @if (block.data.file) {
+              <img
+                [src]="getDirectusImageUrl(block.data.file.url)"
+                [alt]="block.data.file.title"
+              />
+              <div [innerHTML]="block.data.caption"></div>
+            }
           }
           @case ('nestedlist') {
             <!-- TODO: recursive lists -->
@@ -80,7 +82,7 @@
             </ul>
           }
           @default {
-            <div [innerHTML]="block.data.text"></div>
+            <p [innerHTML]="block.data.text"></p>
           }
         }
       }
