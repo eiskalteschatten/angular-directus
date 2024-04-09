@@ -1,1 +1,1 @@
-# angular-directus
+# directus-blog
