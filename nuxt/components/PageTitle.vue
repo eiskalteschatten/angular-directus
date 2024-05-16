@@ -14,7 +14,6 @@ const props = defineProps<{
 
 <style scoped lang="scss">
 .page-title {
-  font-family: 'IBM Plex Mono', monospace;
   padding-bottom: 35px;
 
   &.no-padding-bottom {
