@@ -2,7 +2,7 @@
 import { directusClient } from '@/lib/directusClient';
 import { readItems } from '@directus/sdk';
 
-const { data: posts, pending, error } = await useAsyncData('latestBlogPosts', async () => {
+const { data: posts, error } = await useAsyncData('latestBlogPosts', async () => {
   const res = await directusClient.request(
     readItems('blogPosts', {
       fields: ['*'],
@@ -13,14 +13,10 @@ const { data: posts, pending, error } = await useAsyncData('latestBlogPosts', as
 
   return res;
 });
-
-console.log('data', posts);
-console.log('pending', pending);
-console.log('error', error);
 </script>
 
 <template>
-  <div v-if="pending">Loading...</div>
+  <div v-if="posts?.length === 0">No posts found</div>
   <div v-else>
     <ul>
       <li v-for="post in posts" :key="post.id">
