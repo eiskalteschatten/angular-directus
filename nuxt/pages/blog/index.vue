@@ -20,6 +20,8 @@ useHead({
 </script>
 
 <template>
+  <PageTitle>Blog</PageTitle>
+
   <div v-if="posts?.length === 0">No posts found</div>
   <div v-else>
     <ul>
