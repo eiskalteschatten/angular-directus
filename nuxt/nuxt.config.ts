@@ -6,4 +6,13 @@ export default defineNuxtConfig({
     '/blog/**': { isr: true },
   },
   css: ['~/assets/styles/main.scss'],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/styles/_globalIncludes.scss" as *;'
+        }
+      }
+    }
+  }
 })
