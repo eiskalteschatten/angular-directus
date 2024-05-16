@@ -8,6 +8,9 @@ const { data: posts, error } = await useAsyncData('latestBlogPosts', async () =>
       fields: ['*'],
       limit: 12,
       sort: '-date_published',
+      filter: {
+        status: { _eq: "published" }
+      }
     })
   );
 
