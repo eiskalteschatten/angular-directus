@@ -5,7 +5,10 @@ export default defineNuxtConfig({
     '/': { isr: true },
     '/blog/**': { isr: true },
   },
-  css: ['~/assets/styles/global.scss'],
+  css: [
+    '~/assets/styles/global.scss',
+    '~/assets/styles/fonts.scss',
+  ],
   vite: {
     css: {
       preprocessorOptions: {
