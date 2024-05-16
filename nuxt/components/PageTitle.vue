@@ -1,14 +1,17 @@
 <script setup lang="ts">
 const props = defineProps<{
-  noPaddingBottom?: boolean
-}>()
+  noPaddingBottom?: boolean;
+}>();
 </script>
 
 <template>
-  <h1 class="page-title" :class="{
-    'no-padding-bottom': props.noPaddingBottom,
-  }">
-    <slot></slot>
+  <h1
+    class="page-title"
+    :class="{
+      'no-padding-bottom': props.noPaddingBottom,
+    }"
+  >
+    <slot />
   </h1>
 </template>
 

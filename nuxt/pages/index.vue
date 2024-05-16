@@ -1,5 +1,5 @@
 <template>
-  <Container>
+  <ContainerColumn>
     Home!
-  </Container>
+  </ContainerColumn>
 </template>
