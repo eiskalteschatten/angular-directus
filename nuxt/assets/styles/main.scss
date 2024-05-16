@@ -1,6 +1,3 @@
-@import "./variables";
-@import "./mixins";
-
 :root {
   --background-color: #{$lightBg};
   --background-secondary-color: #{$lightSecondaryBg};
@@ -72,28 +69,6 @@ a {
 
 p {
   margin: 20px 0;
-}
-
-.page-title {
-  font-family: 'IBM Plex Mono', monospace;
-  padding-bottom: 35px;
-
-  &.no-padding-bottom {
-    padding-bottom: 0;
-  }
-}
-
-.low-opacity-text {
-  opacity: .65;
-  transition: opacity 250ms;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
-.primary-color {
-  color: var(--primary-color);
 }
 
 @import "./fonts";
