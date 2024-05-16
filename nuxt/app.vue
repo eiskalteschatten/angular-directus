@@ -1,9 +1,4 @@
 <script setup lang="ts">
-const navItems = [
-  { label: 'Home', to: '/' },
-  { label: 'Blog', to: '/blog' },
-];
-
 useHead({
   titleTemplate: (subTitle) => {
     return subTitle
@@ -17,9 +12,7 @@ useHead({
 </script>
 
 <template>
-  <NuxtLink :to="navItem.to" v-for="navItem in navItems">
-    <h1>{{ navItem.label }}</h1>
-  </NuxtLink>
+  <Header />
 
   <NuxtPage />
 </template>
