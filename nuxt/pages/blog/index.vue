@@ -13,6 +13,10 @@ const { data: posts, error } = await useAsyncData('latestBlogPosts', async () =>
 
   return res;
 });
+
+useHead({
+  title: 'Blog',
+})
 </script>
 
 <template>
