@@ -4,7 +4,7 @@ import { directusClient } from '@/lib/directusClient';
 
 const route = useRoute();
 
-const { data: post, error } = await useAsyncData('latestBlogPosts', async () => {
+const { data: post, pending, error } = await useAsyncData('latestBlogPosts', async () => {
   if (!route.params.slug) {
     return null;
   }
@@ -29,11 +29,11 @@ useHead({
 
 <template>
   <ContainerColumn>
-    <div v-if="post === null">
+    <div v-if="!post && !pending">
       No post found.
     </div>
     <div v-else>
-      <PageTitle>{{ post.title }}</PageTitle>
+      <PageTitle>{{ post!.title }}</PageTitle>
 
     </div>
   </ContainerColumn>
