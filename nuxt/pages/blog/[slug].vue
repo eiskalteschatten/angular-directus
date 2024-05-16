@@ -28,8 +28,8 @@ useHead({
 </script>
 
 <template>
-  <ContainerColumn>
-    <div v-if="!post && !pending">
+  <ContainerColumn v-if="!pending">
+    <div v-if="!post">
       No post found.
     </div>
     <div v-else>
